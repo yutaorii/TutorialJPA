@@ -28,7 +28,7 @@ public class CountryController {
 
     // ----- 追加:ここから -----
     // ----- 詳細画面 -----
-    @GetMapping(value = { "/detail", "/detail/{code}/" })
+    @GetMapping(value = { "/detail", "/detail/{code}" })
     public String getCountry(@PathVariable(name = "code", required = false) String code, Model model) {
         // codeが指定されていたら検索結果、無ければ空のクラスを設定
         Country country = code != null ? service.getCountry(code) : new Country();
